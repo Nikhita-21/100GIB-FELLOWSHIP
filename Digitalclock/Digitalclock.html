@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <!--<script src="Digitalclock.js" defer></script>-->
+    <style>
+        #container
+        {
+
+            display: flex;
+            flex-wrap: wrap;
+            
+
+        }
+        div
+        {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="hrs" style="background-color: blanchedalmond;padding: 30px;">00 </div>
+        <div id="min" style="background-color: rgb(180, 128, 229);padding: 30px;">00</div>
+        <div id="sec" style="background-color: aquamarine;padding: 30px;">00</div>
+    </div>
+    <script>
+        function clock()
+{
+    let date= new Date();
+    let sec=date.getSeconds();
+    let min=date.getMinutes();
+    let hrs=date.getHours();
+    hrs= hrs<10? "0"+hrs :hrs;
+    min=min<10 ?"0"+min :min;
+    sec=sec<10 ?"0"+sec :sec;
+   let h=document.getElementById('hrs');
+    let m=document.getElementById('min');
+    let s=document.getElementById('sec');
+    h.innerHTML=hrs;
+    m.innerHTML=min;
+    s.innerHTML=sec;
+   //document.getElementById('container').innerHTML= hrs+":"+min+":"+sec;
+
+}
+var interval=setInterval(clock,1000);
+//var interval=setInterval(clock,5000);
+//var interval=setInterval(clock,3000);
+    </script>
+
+</body>
+</html>
